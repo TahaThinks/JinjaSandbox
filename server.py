@@ -25,9 +25,15 @@ def guess_age(username):
     }
     agify_response = requests.get(url=agify_url, params=agify_parameters)
     genderize_response = requests.get(url=genderize_url, params=agify_parameters)
-    return f"<h1>Hey {agify_response.json()['name']}" \
-           f"<h2>I think you are {genderize_response.json()['gender']}" \
-           f"<h3> And Maybe {agify_response.json()['age']}"
+    name = agify_response.json()['name']
+    age = agify_response.json()['age']
+    gender = genderize_response.json()['gender']
+
+    return render_template("guess.html",
+                           name=name,
+                           age=age,
+                           gender=gender
+                           )
 
 
 if __name__ == "__main__":
