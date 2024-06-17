@@ -19,7 +19,7 @@ def home():
 
 
 @app.route('/guess/<username>')
-def guess_age(username):
+def guess(username):
     agify_parameters = {
         'name': username
     }
