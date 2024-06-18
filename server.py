@@ -13,7 +13,7 @@ def home():
     random_number = random.randint(1, 10)
     current_datetime = datetime.now()
     current_year = current_datetime.year
-    return render_template("index.html",
+    return render_template("index2.html",
                            num=random_number,
                            year=current_year)
 
